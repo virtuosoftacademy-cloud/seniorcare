@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@theme {
+  /* Sage, Warm Stone, Ivory & Soft Gold Palette */
+  --color-background: #f9f7f3;
+  --color-foreground: #3d3a35;
+  --color-card: #ffffff;
+  --color-card-foreground: #3d3a35;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #3d3a35;
+  
+  /* Primary: Sage & Warm Stone */
+  --color-primary: #384724;
+  --color-primary-foreground: #ffffff;
+  
+  /* Secondary: Ivory & Soft Gold */
+  --color-secondary: #d4af8e;
+  --color-secondary-foreground: #3d3a35;
+  
+  /* Accent: Warm Stone */
+  --color-accent: #9d8b7e;
+  --color-accent-foreground: #ffffff;
+  
+  /* UI Elements */
+  --color-muted: #e5e0da;
+  --color-muted-foreground: #7a6f68;
+  --color-border: #e5e0da;
+  --color-input: #ffffff;
+  --color-ring: #6b8e7e;
+  
+  /* Destructive */
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #ffffff;
+  
+  /* Charts */
+  --color-chart-1: #6b8e7e;
+  --color-chart-2: #d4af8e;
+  --color-chart-3: #9d8b7e;
+  --color-chart-4: #c9a879;
+  --color-chart-5: #8b7f72;
+  
+  /* Radius */
+  --radius: 0.5rem;
+  
+  /* Fonts */
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground;
+  }
+}
