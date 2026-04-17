@@ -1,14 +1,19 @@
 import { Shield, Heart, Zap, Users, FileCheck, TrendingUp } from 'lucide-react'
+import { ShieldCheckIcon } from './ui/shield-check'
+import { ZapIcon } from './ui/zap'
+import { FileCheckIcon } from './ui/file-check'
+import { UsersIcon } from './ui/users'
+import { TrendingUpIcon } from './ui/trending-up'
 
 export default function Services() {
   const cqcStandards = [
     {
-      icon: Shield,
+      icon: ShieldCheckIcon,
       title: 'Safe',
       description: 'We maintain the highest safety standards and safeguarding protocols to protect every individual in our care.',
     },
     {
-      icon: Zap,
+      icon: ZapIcon,
       title: 'Effective',
       description: 'Our evidence-based approach ensures tangible outcomes and continuous improvement in care delivery.',
     },
@@ -18,17 +23,17 @@ export default function Services() {
       description: 'Compassion and empathy guide every interaction, ensuring dignity and respect for all service users.',
     },
     {
-      icon: Users,
+      icon: UsersIcon,
       title: 'Responsive',
       description: 'We listen to individual needs and adapt our services to provide personalised, responsive support.',
     },
     {
-      icon: FileCheck,
+      icon: FileCheckIcon,
       title: 'Well-Led',
       description: 'Strong leadership and clear vision drive our commitment to excellence and continuous learning.',
     },
     {
-      icon: TrendingUp,
+      icon: TrendingUpIcon,
       title: 'Quality',
       description: 'Regular reviews and evaluations ensure we consistently meet and exceed regulatory requirements.',
     },
@@ -55,7 +60,7 @@ export default function Services() {
                 className="bg-card rounded-xl p-8 hover:shadow-md transition-shadow border border-border"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="w-7 h-7 text-primary" />
+                  <Icon className="w-7 h-7 text-primary animate-pulse-scale" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{service.description}</p>

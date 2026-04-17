@@ -1,4 +1,4 @@
-import { Users, Lightbulb, Award, Smile, Handshake, Leaf } from 'lucide-react'
+import { Award, Handshake, Leaf, Lightbulb, Smile, Users } from 'lucide-react'
 
 export default function Values() {
   const values = [

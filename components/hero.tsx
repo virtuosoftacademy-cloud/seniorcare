@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section id="home" className="relative bg-background py-20 sm:py-28 lg:py-32">
+    <section id="home" className="relative bg-background py-20 sm:py-28 lg:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -20,15 +20,15 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link 
-                href="/contact" 
+              <Link
+                href="/contact"
                 className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-colors gap-2"
               >
                 Get Started Today
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5 animate-bounce-subtle" />
               </Link>
-              <Link 
-                href="#services" 
+              <Link
+                href="#services"
                 className="inline-flex items-center justify-center border-2 border-primary text-primary hover:bg-primary/10 px-8 py-3 rounded-lg font-semibold transition-colors"
               >
                 Learn More
@@ -54,14 +54,21 @@ export default function Hero() {
 
           {/* Hero Image */}
           <div className="relative">
-            <div className="bg-primary/20 rounded-2xl p-8 sm:p-12 h-96 flex items-center justify-center">
+            <div className="absolute bg-primary w-xl rounded-2xl p-8 sm:p-12 h-90 flex items-center justify-center">
               <div className="text-center">
                 <div className="w-24 h-24 bg-primary rounded-full mx-auto mb-6 flex items-center justify-center">
                   <span className="text-4xl text-primary-foreground">🏘️</span>
                 </div>
-                <p className="text-foreground font-semibold text-lg">Safe & Supportive Living</p>
+                <p className="text-white font-semibold text-lg">Safe & Supportive Living</p>
               </div>
             </div>
+
+            <div className="relative lg:left-8 top-8 w-xl bg-accent h-72 lg:h-86 rounded-2xl flex items-center justify-center">
+              <img src={"/oldImg.jpg"} alt='Oldage'
+                className="bg-primary mx-auto w-xl flex items-center rounded-2xl justify-center h-90"
+              />
+            </div>
+
           </div>
         </div>
       </div>

@@ -1,24 +1,30 @@
+
 import Image from 'next/image'
+import { Building2, Heart, Users, Shield } from 'lucide-react'
 
 export default function Partners() {
   const partners = [
     {
       id: 1,
+      icon: Building2,
       name: 'Local Authority Partners',
       description: 'Working with local councils and authorities',
     },
     {
       id: 2,
+      icon: Heart,
       name: 'Healthcare Providers',
       description: 'Collaborating with NHS and medical professionals',
     },
     {
       id: 3,
+      icon: Users,
       name: 'Support Networks',
       description: 'Partnering with community support organisations',
     },
     {
       id: 4,
+      icon: Shield,
       name: 'Advocacy Groups',
       description: 'Supporting rights and representation initiatives',
     },
@@ -38,21 +44,24 @@ export default function Partners() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {partners.map((partner) => (
-            <div
-              key={partner.id}
-              className="bg-card rounded-xl p-8 border border-border hover:border-primary/30 transition-colors flex flex-col items-center text-center gap-4"
-            >
-              {/* Generated Placeholder Logo */}
-              <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-3xl font-bold text-white">{partner.id}</span>
+          {partners.map((partner) => {
+            const Icon = partner.icon
+            return (
+              <div
+                key={partner.id}
+                className="bg-card rounded-xl p-8 border border-border hover:border-primary/30 transition-colors flex flex-col items-center text-center gap-4 group"
+              >
+                {/* Animated Icon */}
+                <div className="w-24 h-24 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center group-hover:shadow-lg transition-shadow">
+                  <Icon className="w-12 h-12 text-primary animate-bounce-subtle" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">{partner.name}</h3>
+                  <p className="text-sm text-muted-foreground">{partner.description}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-bold text-foreground mb-2">{partner.name}</h3>
-                <p className="text-sm text-muted-foreground">{partner.description}</p>
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         <div className="mt-12 bg-card rounded-xl p-8 border border-border">
