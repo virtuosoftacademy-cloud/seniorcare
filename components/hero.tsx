@@ -14,7 +14,8 @@ export default function Hero() {
                 Housing-Led Support for Vulnerable Adults
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We provide safe, effective, and compassionate housing-led supported living services. Our CQC-regulated services ensure your wellbeing, dignity, and independence are always our priority.
+                We provide safe, effective, and compassionate housing-led supported living services.
+                 {/* Our CQC-regulated services ensure your wellbeing, dignity, and independence are always our priority. */}
               </p>
             </div>
 
@@ -25,7 +26,7 @@ export default function Hero() {
                 className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-colors gap-2"
               >
                 Get Started Today
-                <ArrowRight className="w-5 h-5 animate-bounce-subtle" />
+                <ArrowRight className="w-5 h-5 mt-1" />
               </Link>
               <Link
                 href="#services"

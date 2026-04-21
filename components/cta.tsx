@@ -17,17 +17,17 @@ export default function CTA() {
 
           {/* Contact Methods */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
-            <div className="bg-primary-foreground/10 rounded-lg p-6 text-primary-foreground">
+            <div className="bg-accent-foreground/10 rounded-lg p-6 text-primary-foreground">
               <Phone className="w-8 h-8 mx-auto mb-3" />
               <p className="font-semibold mb-1">Phone</p>
               <a href="tel:+441234567890" className="hover:underline">+44 (0) 123 456 7890</a>
             </div>
-            <div className="bg-primary-foreground/10 rounded-lg p-6 text-primary-foreground">
+            <div className="bg-accent-foreground/10 rounded-lg p-6 text-primary-foreground">
               <Mail className="w-8 h-8 mx-auto mb-3" />
               <p className="font-semibold mb-1">Email</p>
               <a href="mailto:hello@ardellliving.org.uk" className="hover:underline">hello@ardellliving.org.uk</a>
             </div>
-            <div className="bg-primary-foreground/10 rounded-lg p-6 text-primary-foreground">
+            <div className="bg-accent-foreground/10 rounded-lg p-6 text-primary-foreground">
               <MapPin className="w-8 h-8 mx-auto mb-3" />
               <p className="font-semibold mb-1">Address</p>
               <p>123 Care Lane, Oxford, OX1 1AA</p>

@@ -8,8 +8,8 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'Ardell Living | Housing-Led Supported Living',
-  description: 'Ardell Living provides safe, effective, and compassionate housing-led supported living services for vulnerable adults, meeting CQC standards for safety and quality care.',
-  generator: 'v0.app',
+  description: 'Ardell Living provides safe, effective, and compassionate housing-led supported living services for vulnerable adults.',
+  // , meeting CQC standards for safety and quality care.',
   icons: {
     icon: [
       {
@@ -21,11 +21,11 @@ export const metadata: Metadata = {
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
+        url: '/ArdellLogo.png',
         type: 'image/svg+xml',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/ArdellLogo.png',
   },
 }
 

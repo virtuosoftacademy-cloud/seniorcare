@@ -69,7 +69,7 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-secondary/20 to-background">
+      <section className="py-16 sm:py-24 bg-linear-to-b from-secondary/20 to-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground text-balance">
