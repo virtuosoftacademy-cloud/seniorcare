@@ -1,6 +1,8 @@
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Link from 'next/link'
+import { UserPlus } from 'lucide-react'
+import Values from '@/components/values'
 
 export const metadata = {
   title: 'About Ardell Living | Our Mission & Values',
@@ -10,57 +12,57 @@ export const metadata = {
 export default function AboutPage() {
   const values = [
     {
-      icon: '👥',
-      title: 'Dignity',
-      description: 'We respect the inherent worth and rights of every individual in our care',
+      icon: 'UserPlus',
+      title: 'Dignity & Respect',
+      description: 'We treat every individual with respect, ensuring their choices, preferences, and rights are always upheld.',
     },
     {
       icon: '🎯',
       title: 'Independence',
-      description: 'We empower people to make choices and develop life skills at their own pace',
+      description: 'We support individuals to develop confidence and life skills, enabling them to live as independently as possible.',
     },
     {
       icon: '🛡️',
-      title: 'Safety',
-      description: 'We create secure, supportive environments where people can thrive',
+      title: 'Safety & stability',
+      description: 'We provide secure, well-managed environments where individuals feel safe and supported.',
     },
     {
       icon: '⭐',
-      title: 'Quality',
-      description: 'We maintain the highest standards in all aspects of our service delivery',
-    },
-    {
-      icon: '📋',
-      title: 'Accountability',
-      description: 'We are transparent and responsible in our relationships and operations',
+      title: 'Quality & Excellence',
+      description: 'We maintain high standards across our housing and support services, aligned with regulatory expectations.',
     },
     {
       icon: '❤️',
       title: 'Compassion',
-      description: 'We approach every interaction with empathy and genuine care',
+      description: 'We deliver care with empathy, understanding, and genuine commitment to each individual’s well-being.',
+    },
+    {
+      icon: '📋',
+      title: 'Accountability',
+      description: 'We operate with transparency, strong governance, and clear responsibility in everything we do.',
     },
   ]
 
   const partners = [
     {
       id: 1,
-      category: 'Local Authority Partners',
-      description: 'We work closely with local councils and authorities to ensure seamless care coordination and funding alignment.',
+      category: 'Local Authority & Commissioners',
+      description: 'We work closely with local authorities to deliver supported living solutions that meet commissioning requirements, regulatory standards, and long-term placement objectives.      ',
     },
     {
       id: 2,
-      category: 'Healthcare Providers',
-      description: 'Collaborating with NHS services and medical professionals to support holistic health and wellbeing.',
+      category: 'Healthcare & Community Services',
+      description: 'We engage with healthcare professionals and community services to ensure individuals receive holistic support that promotes wellbeing and independence.',
     },
     {
       id: 3,
-      category: 'Support Networks',
-      description: 'Partnering with community support organisations to expand opportunities for personal development.',
+      category: 'Care & Support Providers',
+      description: 'We partner with experienced, regulated care providers to deliver person-centred support aligned with individual care plans and outcomes.'
     },
     {
       id: 4,
-      category: 'Advocacy Groups',
-      description: 'Supporting rights and representation initiatives to amplify resident voices and experiences.',
+      category: 'Property & Housing Partners',
+      description: 'Through our housing network, we secure and manage high-quality accommodation designed to meet the specific needs of supported living environments.',
     },
   ]
 
@@ -121,31 +123,10 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 sm:py-28 bg-muted/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance">
-              Our Core Values
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              These six values guide every decision we make and every interaction we have.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {values.map((value) => (
-              <div key={value.title} className="bg-card rounded-xl p-8 border border-border hover:border-primary/30 transition-colors">
-                <div className="text-5xl mb-4">{value.icon}</div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{value.title}</h3>
-                <p className="text-muted-foreground">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Values/>
 
       {/* Partners Section */}
-      {/* <section className="py-20 sm:py-28">
+      <section className="py-20 sm:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-4">
             <p className="text-primary font-semibold uppercase tracking-wider text-sm">Our Network</p>
@@ -185,7 +166,7 @@ export default function AboutPage() {
             </Link>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* CQC Standards Section */}
       <section className="py-20 sm:py-28 bg-muted/30">

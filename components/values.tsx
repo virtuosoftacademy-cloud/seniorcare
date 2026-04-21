@@ -7,38 +7,44 @@ import { BrainIcon } from './ui/brain'
 import { UpvoteIcon } from './ui/upvote'
 import { RouteIcon } from './ui/route'
 import { RefreshCCWIcon } from './ui/refresh-ccw'
+import { UserIcon } from './ui/user'
+import { TrendingUpIcon } from './ui/trending-up'
+import { ShieldCheckIcon } from './ui/shield-check'
+import { CheckIcon } from './ui/check'
+import { HomeIcon } from './ui/home'
+import { FileTextIcon } from './ui/file-text'
 
 export default function Values() {
   const values = [
     {
-      icon: UsersIcon,
-      title: 'Person-Centred',
-      description: 'Every individual is at the heart of what we do. We respect choices, preferences, and promote independence.',
+      icon: UserIcon,
+      title: 'Dignity & Respect',
+      description: 'We treat every individual with respect, ensuring their choices, preferences, and rights are always upheld.',
     },
     {
-      icon: BrainIcon,
-      title: 'Innovation',
-      description: 'We continually develop new approaches and leverage best practices to enhance service quality.',
+      icon: TrendingUpIcon,
+      title: 'Independence',
+      description: 'We support individuals to develop confidence and life skills, enabling them to live as independently as possible.',
     },
     {
-      icon: UpvoteIcon,
-      title: 'Excellence',
-      description: 'We hold ourselves to the highest standards in every aspect of our work and care provision.',
+      icon: HomeIcon,
+      title: 'Safety & Stability',
+      description: 'We provide secure, well-managed environments where individuals feel safe and supported.',
     },
     {
-      icon: SmileIcon,
+      icon: CheckIcon,
+      title: 'Quality & Excellence',
+      description: 'We maintain high standards across our housing and support services, aligned with regulatory expectations.',
+    },
+    {
+      icon: FileTextIcon,
+      title: 'Accountability',
+      description: 'We operate with transparency, strong governance, and clear responsibility in everything we do.',
+    },
+    {
+      icon: HeartIcon,
       title: 'Compassion',
-      description: 'Empathy and genuine care underpin all our relationships with service users and their families.',
-    },
-    {
-      icon: HeartHandshakeIcon,
-      title: 'Collaboration',
-      description: 'We work together with partners, stakeholders, and community to provide holistic support.',
-    },
-    {
-      icon: RefreshCCWIcon,
-      title: 'Sustainability',
-      description: 'We are committed to environmental responsibility and building a better future for all.',
+      description: 'We deliver care with empathy, understanding, and genuine commitment to each individual’s well-being.',
     },
   ]
 
@@ -51,8 +57,7 @@ export default function Values() {
             Core Values
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            These principles guide every decision and interaction, ensuring we deliver services that truly make a difference.
-          </p>
+            Our values shape every aspect of how we deliver our services, from the homes we provide to the support we deliver.          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
