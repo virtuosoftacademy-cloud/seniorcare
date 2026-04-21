@@ -45,10 +45,10 @@ export default function Hero() {
                 <p className="text-3xl font-bold text-primary">15+</p>
                 <p className="text-muted-foreground">Years Experience</p>
               </div>
-              <div>
+              {/* <div>
                 <p className="text-3xl font-bold text-primary">CQC</p>
                 <p className="text-muted-foreground">Regulated & Compliant</p>
-              </div>
+              </div> */}
             </div>
           </div>
 
