@@ -145,7 +145,7 @@ export default function AboutPage() {
       </section>
 
       {/* Partners Section */}
-      <section className="py-20 sm:py-28">
+      {/* <section className="py-20 sm:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-4">
             <p className="text-primary font-semibold uppercase tracking-wider text-sm">Our Network</p>
@@ -185,7 +185,7 @@ export default function AboutPage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CQC Standards Section */}
       <section className="py-20 sm:py-28 bg-muted/30">

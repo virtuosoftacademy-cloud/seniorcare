@@ -3,7 +3,7 @@
 
 @theme {
   /* Sage, Warm Stone, Ivory & Soft Gold Palette */
-  --color-background: #f9f7f3;
+  --color-background: #ffffff;
   --color-foreground: #3d3a35;
   --color-card: #ffffff;
   --color-card-foreground: #3d3a35;
@@ -11,7 +11,7 @@
   --color-popover-foreground: #3d3a35;
   
   /* Primary: Sage & Warm Stone */
-  --color-primary: #5C6455;
+  --color-primary: #5C6051;
   --color-primary-foreground: #ffffff;
   
   /* Secondary: Ivory & Soft Gold */
