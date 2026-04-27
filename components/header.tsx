@@ -37,13 +37,13 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className={`${isActive(link.label)}`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
