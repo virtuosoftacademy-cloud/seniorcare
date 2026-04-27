@@ -1,0 +1,6 @@
+:HL["/_next/static/chunks/0d0x_kkrr8hfj.css","style"]
+:HL["/_next/static/chunks/0n.hy21ehvv7u.css","style"]
+:HL["/_next/static/media/caa3a2e1cccd8315-s.p.16t1db8_9y2o~.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/fa2443bc2823ffce-s.p.0isnuxw27~4j..woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/ArdellLogo.png","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"partners","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"Yi2MEhKNid3MKTW12Hvi0"}

@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Geist, Geist_Mono, Playfair } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const _geistMono = Playfair({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'Ardell Living | Housing-Led Supported Living',
@@ -12,14 +12,14 @@ export const metadata: Metadata = {
   // , meeting CQC standards for safety and quality care.',
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
+      // {
+      //   url: '/icon-light-32x32.png',
+      //   media: '(prefers-color-scheme: light)',
+      // },
+      // {
+      //   url: '/icon-dark-32x32.png',
+      //   media: '(prefers-color-scheme: dark)',
+      // },
       {
         url: '/ArdellLogo.png',
         type: 'image/svg+xml',
