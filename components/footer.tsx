@@ -10,9 +10,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-background rounded-lg flex items-center justify-center">
-                <img src="/ArdellLogo.png" alt="Ardell Living Logo" className="w-6 h-6" />
+            <div className="flex items-center gap-2 -mt-4 md:-mt-10">
+              <div className="w-30 h-30 flex items-center justify-center">
+                <img src="/ArdellLogo.png" alt="Ardell Living Logo" className="brightness-400 grayscale-50" />
               </div>
               {/* <span className="font-bold text-lg">Ardell Living</span> */}
             </div>

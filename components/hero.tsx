@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-black/60">
+      <div className="absolute inset-0 -top-20 bg-black/60">
         <img
           className="absolute bg-cover bg-center bg-no-repeat h-full w-full object-cover"
           src="/Hero.png"
