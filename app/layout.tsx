@@ -23,11 +23,11 @@ export const metadata: Metadata = {
       //   media: '(prefers-color-scheme: dark)',
       // },
       {
-        url: '/ArdellLogo.png',
+        url: '/favicon.ico',
         type: 'image/svg+xml',
       },
     ],
-    apple: '/ArdellLogo.png',
+    apple: '/favicon.ico',
   },
 }
 
