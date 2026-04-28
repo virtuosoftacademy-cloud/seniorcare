@@ -54,7 +54,7 @@ export default function Values() {
         <div className="text-center mb-16 space-y-4">
           <p className="text-primary font-semibold uppercase tracking-wider text-sm">Our Foundation</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance">
-            Core Values
+            Our Values
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Our values shape every aspect of how we deliver our services, from the homes we provide to the support we deliver.          </p>
