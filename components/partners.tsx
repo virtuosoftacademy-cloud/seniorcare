@@ -8,25 +8,25 @@ export default function Partners() {
       id: 1,
       icon: Building2,
       name: 'Local Authority Partners',
-      description: 'Working with local councils and authorities',
+      description: 'We work closely with local authorities to deliver supported living solutions that meet commissioning requirements, regulatory standards and long-term placement objectives.',
     },
     {
       id: 2,
-      icon: Heart,
-      name: 'Healthcare Providers',
-      description: 'Collaborating with NHS and medical professionals',
+      icon: Users,
+      name: 'Care and Support Providers',
+      description: 'We partner with experienced, regulated care providers to deliver person-centred support aligned with individual care plans and outcomes.',
     },
     {
       id: 3,
-      icon: Users,
-      name: 'Support Networks',
-      description: 'Partnering with community support organisations',
+      icon: Shield,
+      name: 'Property & Housing Partners',
+      description: 'Through our housing network, we secure and manage high-quality accommodation designed to meet the specific needs of supported living environments.',
     },
     {
       id: 4,
-      icon: Shield,
-      name: 'Advocacy Groups',
-      description: 'Supporting rights and representation initiatives',
+      icon: Heart,
+      name: 'Healthcare & Community Services ',
+      description: 'We engage with healthcare professionals and community services to ensure individuals receive holistic support that promotes wellbeing and independence.',
     },
   ]
 
@@ -36,10 +36,10 @@ export default function Partners() {
         <div className="text-center mb-16 space-y-4">
           <p className="text-primary font-semibold uppercase tracking-wider text-sm">Partners & Collaborators</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance">
-            Working Together
+            Our Strategic Partnerships
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We collaborate with leading organisations to provide comprehensive, coordinated support.
+            We actively collaborate with:
           </p>
         </div>
 

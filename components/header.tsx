@@ -31,7 +31,7 @@ export default function Header() {
             <div className="w-10 h-10 rounded-lg flex items-center justify-center">
               <img src="/ArdellLogo.png" alt="Ardell Living Logo" className="w-6 h-6" />
             </div>
-            <span className="text-foreground font-bold text-lg hidden sm:inline">Ardell Living</span>
+            {/* <span className="text-foreground font-bold text-lg hidden sm:inline">Ardell Living</span> */}
           </Link>
 
           {/* Desktop Navigation */}

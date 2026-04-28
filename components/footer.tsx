@@ -14,10 +14,10 @@ export default function Footer() {
               <div className="w-10 h-10 bg-background rounded-lg flex items-center justify-center">
                 <img src="/ArdellLogo.png" alt="Ardell Living Logo" className="w-6 h-6" />
               </div>
-              <span className="font-bold text-lg">Ardell Living</span>
+              {/* <span className="font-bold text-lg">Ardell Living</span> */}
             </div>
             <p className="text-primary-foreground/70">
-              Housing-led supported living for vulnerable adults, regulated by the Care Quality Commission.
+              Creating safe, high-quality homes where people can thrive.
             </p>
             <div className="flex gap-4 mt-6">
               <a href="#" className="hover:text-primary transition-colors">
@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
+          {/* <div>
             <h3 className="font-bold mb-4 text-background">Services</h3>
             <ul className="space-y-2 text-primary-foreground/70">
               <li><a href="#services" className="hover:text-primary transition-colors">Housing Support</a></li>
@@ -44,7 +44,7 @@ export default function Footer() {
               <li><a href="#services" className="hover:text-primary transition-colors">Health & Wellness</a></li>
               <li><a href="#services" className="hover:text-primary transition-colors">Community Integration</a></li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Company */}
           <div>
@@ -61,10 +61,8 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-4 text-background">Legal</h3>
             <ul className="space-y-2 text-primary-foreground/70">
-              <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Terms & Conditions</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Safeguarding</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Accessibility</a></li>
+              <li><Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link href="#" className="hover:text-primary transition-colors">Terms & Conditions</Link></li>
             </ul>
           </div>
         </div>

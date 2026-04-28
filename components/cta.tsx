@@ -20,17 +20,17 @@ export default function CTA() {
             <div className="bg-accent-foreground/10 rounded-lg p-6 text-primary-foreground">
               <Phone className="w-8 h-8 mx-auto mb-3" />
               <p className="font-semibold mb-1">Phone</p>
-              <a href="tel:+441234567890" className="hover:underline">+44 (0) 123 456 7890</a>
+              <a href="tel:+441234567890" className="hover:underline">+44 (0) XXX XXX XXXX</a>
             </div>
             <div className="bg-accent-foreground/10 rounded-lg p-6 text-primary-foreground">
               <Mail className="w-8 h-8 mx-auto mb-3" />
               <p className="font-semibold mb-1">Email</p>
-              <a href="mailto:hello@ardellliving.org.uk" className="hover:underline">hello@ardellliving.org.uk</a>
+              <a href="mailto:info@ardellliving.org.uk" className="hover:underline">info@ardellliving.org.uk</a>
             </div>
             <div className="bg-accent-foreground/10 rounded-lg p-6 text-primary-foreground">
               <MapPin className="w-8 h-8 mx-auto mb-3" />
               <p className="font-semibold mb-1">Address</p>
-              <p>123 Care Lane, Oxford, OX1 1AA</p>
+              <p>13 Edward Avenue, Morden, SM4 6EP</p>
             </div>
           </div>
 
