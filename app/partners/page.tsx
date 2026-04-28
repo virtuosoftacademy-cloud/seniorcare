@@ -85,7 +85,7 @@ export default function PartnersPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      {/* <Header /> */}
 
       {/* Hero Section - Updated */}
       <section className="py-16 sm:py-24 bg-gradient-to-b from-secondary/20 to-background">
@@ -238,7 +238,7 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

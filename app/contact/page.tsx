@@ -42,7 +42,7 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Header />
+      {/* <Header /> */}
       
       <section className="py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -231,7 +231,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </main>
   )
 }
