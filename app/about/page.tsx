@@ -1,7 +1,6 @@
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Link from 'next/link'
-import { UserPlus } from 'lucide-react'
 import Values from '@/components/values'
 
 export const metadata = {
@@ -9,7 +8,42 @@ export const metadata = {
   description: 'Learn about Ardell Living\'s housing-led supported living approach, our mission to support vulnerable adults, and our core values of dignity, independence, and compassionate care.',
 }
 
+
 export default function AboutPage() {
+
+  const WhatMakesUsDifferent = [
+    {
+      title: 'Purpose-designed homes',
+      description: 'environments that promote safety, comfort, and independence.',
+    },
+    {
+      title: 'Structured and consistent support',
+      description: 'Support is delivered in line with assessed needs, care plans, and best practice guidance.',
+    },
+    {
+      title: 'Robust governance frameworks ',
+      description: 'policies, procedures, and oversight aligned with regulatory expectations.',
+    },
+    {
+      title: 'Outcome-focused delivery ',
+      description: 'supporting individuals to progress towards greater independence and stability.',
+    }
+  ]
+
+  const OurCommitment = [
+    {
+      description: 'Maintaining compliance with CQC standards and best practice guidance.',
+    },
+    {
+      description: 'Ensuring safeguarding and risk management processes are embedded in daily operations.',
+    },
+    {
+      description: 'Providing transparent, accountable, and well-documented service delivery ',
+    },
+    {
+      description: 'Continuously reviewing and improving the quality of our services.',
+    }
+  ]
   const values = [
     {
       icon: 'UserPlus',
@@ -84,6 +118,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+
       {/* Mission Section */}
       <section className="py-20 sm:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,30 +126,47 @@ export default function AboutPage() {
             <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Our Mission</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                At Ardell Living, we believe that every individual deserves to live in a home of their own, with the support they need to thrive. Our housing-led approach puts people at the center of everything we do, recognizing that stable housing is the foundation for positive change and personal growth.
-              </p>
+                Creating homes where people can live with dignity, independence, and purpose Ardell Living is a housing-led supported living provider, delivering high-quality accommodation alongside tailored, person-centred support. Our services are designed in line with the expectations of the Care Quality Commission (CQC), ensuring that individuals receive safe, effective, caring, responsive, and well-led support.              </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We work with vulnerable adults to create personalized support plans that respect their choices, encourage their independence, and help them build meaningful lives. By focusing on what people can do, rather than their limitations, we create pathways to recovery, resilience, and wellbeing.
-              </p>
+                We believe that a stable, well-managed home is the foundation for positive outcomes. By combining thoughtfully designed living environments with structured and consistent support, we enable individuals to develop independence, build confidence, and live with dignity.              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">We work collaboratively with local authorities, care partners, and healthcare professionals to ensure that every placement is appropriate, sustainable, and aligned with individual care needs and outcomes.</p>
             </div>
 
             <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Our Approach</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                The housing-led supported living model is built on a simple but powerful principle: everyone deserves a home. This approach recognizes that by providing stable housing first—unconditionally—and then wrapping tailored support around it, we can help people achieve their goals and live fulfilling lives.
+                Our model is built around person-centred care and housing stability, ensuring that support is tailored to each individual while promoting independence wherever possible.
+                We align our delivery with the CQC’s Key Lines of Enquiry (KLOEs):
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 <div className="bg-card border border-border rounded-lg p-6">
-                  <h3 className="text-lg font-bold text-foreground mb-2">Person-Centered</h3>
-                  <p className="text-muted-foreground">Every support plan is tailored to individual needs, goals, and aspirations.</p>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Safe</h3>
+                  <p className="text-muted-foreground">
+                    We provide secure, well-maintained homes with clear safeguarding procedures and risk management frameworks in place                   </p>
                 </div>
                 <div className="bg-card border border-border rounded-lg p-6">
-                  <h3 className="text-lg font-bold text-foreground mb-2">Evidence-Based</h3>
-                  <p className="text-muted-foreground">We use proven practices and continuously evaluate our impact and outcomes.</p>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Effective</h3>
+                  <p className="text-muted-foreground">
+                    Support is delivered in line with assessed needs, care plans, and best practice guidance
+                  </p>
                 </div>
                 <div className="bg-card border border-border rounded-lg p-6">
-                  <h3 className="text-lg font-bold text-foreground mb-2">CQC Regulated</h3>
-                  <p className="text-muted-foreground">We maintain high standards across all five CQC Key Lines of Enquiry.</p>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Caring</h3>
+                  <p className="text-muted-foreground">
+                    Individuals are treated with dignity, respect, and compassion at all times.
+                  </p>
+                </div>
+                <div className="bg-card border border-border rounded-lg p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-2">Responsive </h3>
+                  <p className="text-muted-foreground">
+                    Services are flexible and adapt to changing needs and circumstances
+                  </p>
+                </div>
+                <div className="bg-card border border-border rounded-lg p-6">
+                  <h3 className="text-lg font-bold text-foreground mb-2">Well-led</h3>
+                  <p className="text-muted-foreground">
+                    Strong governance, oversight, and continuous improvement underpin our operations
+                  </p>
                 </div>
               </div>
             </div>
@@ -122,39 +174,168 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* What Makes Us Different */}
+      <section className=" px-6 sm:px-6 lg:px-8 py-20 sm:py-28 bg-muted/30 space-y-10">
+        <div className='max-w-4xl mx-auto'>
+          <div >
+            <div className="text-center space-y-6 mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground">What Makes Us Different</h2>
+              <p className="text-sm md:text-lg text-muted-foreground">
+                Ardell Living adopts a housing-first approach, recognising that the quality and stability of accommodation directly impact wellbeing and long-term outcomes.
+                We differentiate ourselves through:
+              </p>
+            </div>
+
+            <ul className="space-y-2 list-disc pl-5">
+              {WhatMakesUsDifferent.map((standard) => (
+                <li key={standard.title}>
+                  <h3 className="font-bold text-foreground text-lg">{standard.title}</h3>
+                  <p className="text-muted-foreground mt-2">{standard.description}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className='pt-6'>
+            <div className="space-y-6 mb-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground">Our Commitment</h2>
+              <p className="text-sm md:text-lg text-muted-foreground">
+                We are committed to delivering services that meet both regulatory standards and the expectations of individuals, families, and commissioning authorities.
+                Our commitment includes:
+              </p>
+            </div>
+
+            <ul className="space-y-2 list-disc pl-5">
+              {OurCommitment.map((standard) => (
+                <li key={standard.description}>
+                  <p className="text-muted-foreground">{standard.description}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="pt-6 text-sm md:text-lg text-muted-foreground max-w-3xl">
+              Ardell Living adopts a housing-first approach, recognising that the quality and stability of accommodation directly impact wellbeing and long-term outcomes.
+              We differentiate ourselves through:
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+
       {/* Values Section */}
-      <Values/>
+      <Values />
 
       {/* Partners Section */}
-      <section className="py-20 sm:py-28">
+      <section className="py-10 sm:py-18">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 space-y-4">
+          <div className="text-center mb-6 space-y-4">
             <p className="text-primary font-semibold uppercase tracking-wider text-sm">Our Network</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance">
-              Strategic Partnerships
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground max-w-2xl mx-auto">
+              Working in Partnership to Deliver Better Outcomes
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We collaborate with leading organizations to provide comprehensive, coordinated support to the people we serve.
+            <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto">
+              At Ardell Living, collaboration sits at the core of our service delivery. We work alongside trusted partners across housing, care, and local authority networks to ensure individuals receive coordinated, high-quality support within safe and stable environments.
             </p>
           </div>
 
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-center mb-12">
+            Our partnership model enables us to combine specialist expertise, ensuring that every individual benefits from a well-rounded, responsive, and sustainable support framework.
+          </p>
+
+          <h3 className="text-xl sm:text-2xl font-bold text-foreground text-center mb-8">
+            Our Strategic Partnerships
+          </h3>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {partners.map((partner) => (
-              <div
-                key={partner.id}
-                className="bg-gradient-to-br from-primary/5 to-accent/5 border border-border rounded-xl p-8 hover:border-primary/50 transition-colors"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl font-bold text-white">{partner.id}</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-foreground mb-2">{partner.category}</h3>
-                    <p className="text-muted-foreground">{partner.description}</p>
-                  </div>
+            <div className="bg-gradient-to-br from-primary/5 to-accent/5 border border-border rounded-xl p-8 hover:border-primary/50 transition-colors">
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl font-bold text-white">1</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Local Authorities & Commissioners</h3>
+                  <p className="text-muted-foreground">
+                    We work closely with local authorities to deliver supported living solutions that meet commissioning requirements, regulatory standards, and long-term placement objectives.
+                  </p>
                 </div>
               </div>
-            ))}
+            </div>
+
+            <div className="bg-gradient-to-br from-primary/5 to-accent/5 border border-border rounded-xl p-8 hover:border-primary/50 transition-colors">
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl font-bold text-white">2</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Care & Support Providers</h3>
+                  <p className="text-muted-foreground">
+                    We partner with experienced, regulated care providers to deliver person-centred support aligned with individual care plans and outcomes.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-primary/5 to-accent/5 border border-border rounded-xl p-8 hover:border-primary/50 transition-colors">
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl font-bold text-white">3</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Property & Housing Partners</h3>
+                  <p className="text-muted-foreground">
+                    Through our housing network, we secure and manage high-quality accommodation designed to meet the specific needs of supported living environments.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-primary/5 to-accent/5 border border-border rounded-xl p-8 hover:border-primary/50 transition-colors">
+              <div className="flex items-start gap-4">
+                <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span className="text-2xl font-bold text-white">4</span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">Healthcare & Community Services</h3>
+                  <p className="text-muted-foreground">
+                    We engage with healthcare professionals and community services to ensure individuals receive holistic support that promotes wellbeing and independence.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-primary/10 to-accent/10 border border-border rounded-xl p-8 mt-10">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground text-center mb-6">
+              Our Commitment to Partnership
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-foreground">Transparency and accountability</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-foreground">Shared outcomes and objectives</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-foreground">Consistent communication and collaboration</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-foreground">Alignment with regulatory and safeguarding standards</span>
+              </div>
+            </div>
+            <p className="text-center text-muted-foreground mt-6 pt-4 border-t border-border">
+              This collaborative approach ensures that every service we deliver is coordinated, effective, and centred around the individual.
+            </p>
           </div>
 
           <div className="mt-12 text-center">
@@ -168,32 +349,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CQC Standards Section */}
-      <section className="py-20 sm:py-28 bg-muted/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-6 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">CQC Regulatory Compliance</h2>
-            <p className="text-lg text-muted-foreground">
-              As a CQC-regulated provider, we are inspected against five Key Lines of Enquiry to ensure we meet the highest standards of care.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-            {['Safe', 'Effective', 'Caring', 'Responsive', 'Well-led'].map((standard) => (
-              <div key={standard} className="bg-card border border-border rounded-lg p-6 text-center hover:border-primary/30 transition-colors">
-                <h3 className="font-bold text-foreground text-lg">{standard}</h3>
-              </div>
-            ))}
-          </div>
-
-          <p className="text-center text-muted-foreground mt-8">
-            These standards ensure we consistently provide safe, effective, and compassionate care that respects the dignity and choices of every individual.
-          </p>
-        </div>
-      </section>
 
       {/* CTA Section */}
-      <section className="py-20 sm:py-28">
+      {/* <section className="py-20 sm:py-28">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
             Ready to Get in Touch?
@@ -205,7 +363,7 @@ export default function AboutPage() {
             Contact Us Today
           </Link>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

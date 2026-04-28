@@ -80,8 +80,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-foreground mb-2">Email</h3>
-                    <a href="mailto:hello@ardellliving.org.uk" className="text-primary hover:underline">
-                      hello@ardellliving.org.uk
+                    <a href="mailto:hello@ardellliving.co.uk" className="text-primary hover:underline">
+                      hello@ardellliving.co.uk
                     </a>
                     <p className="text-sm text-muted-foreground mt-1">We&apos;ll respond within 24 hours</p>
                   </div>
@@ -96,9 +96,9 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-foreground mb-2">Address</h3>
                     <p className="text-foreground">
-                      123 Care Lane<br />
-                      Oxford, OX1 1AA<br />
-                      United Kingdom
+                      13 Edward Avenue<br />
+                      Morden<br />
+                      SM4 6EP
                     </p>
                   </div>
                 </div>
