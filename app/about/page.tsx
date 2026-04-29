@@ -1,6 +1,7 @@
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Link from 'next/link'
+import Values from '@/components/values'
 
 export const metadata = {
   title: 'About Ardell Living | Our Mission & Values',
@@ -149,7 +150,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Values Section */}
-      <section className="py-20 sm:py-28">
+      {/* <section className="py-20 sm:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 space-y-4">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Our Values</h2>
@@ -166,8 +167,8 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
-
+      </section> */}
+      <Values />
       {/* What Makes Us Different & Our Commitment Section */}
       <section className="py-20 sm:py-28 bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
