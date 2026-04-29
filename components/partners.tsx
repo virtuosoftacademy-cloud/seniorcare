@@ -34,7 +34,7 @@ export default function Partners() {
     <section className="py-20 sm:py-28 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 space-y-4">
-          <p className="text-primary font-semibold uppercase tracking-wider text-sm">Partners & Collaborators</p>
+          {/* <p className="text-primary font-semibold uppercase tracking-wider text-sm">Partners & Collaborators</p> */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance">
             Our Strategic Partnerships
           </h2>
@@ -64,7 +64,7 @@ export default function Partners() {
           })}
         </div>
 
-        <div className="mt-12 bg-card rounded-xl p-8 border border-border">
+        {/* <div className="mt-12 bg-card rounded-xl p-8 border border-border">
           <div className="text-center space-y-4">
             <h3 className="text-2xl font-bold text-foreground">Ready to Partner With Us?</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -74,7 +74,7 @@ export default function Partners() {
               Contact Our Team
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

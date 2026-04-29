@@ -25,11 +25,11 @@ export default function CTA() {
             <div className="bg-accent-foreground/10 rounded-lg p-6 text-primary-foreground">
               <Mail className="w-8 h-8 mx-auto mb-3" />
               <p className="font-semibold mb-1">Email</p>
-              <a href="mailto:info@ardellliving.org.uk" className="hover:underline">info@ardellliving.org.uk</a>
+              <a href="mailto:info@ardellliving.co.uk" className="hover:underline">info@ardellliving.co.uk</a>
             </div>
             <div className="bg-accent-foreground/10 rounded-lg p-6 text-primary-foreground">
               <MapPin className="w-8 h-8 mx-auto mb-3" />
-              <p className="font-semibold mb-1">Address</p>
+              <p className="font-semibold mb-1">Registered Address</p>
               <p>13 Edward Avenue, Morden, SM4 6EP</p>
             </div>
           </div>

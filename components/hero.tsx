@@ -31,7 +31,7 @@ const Hero = () => {
 
             <div className="font-sans flex flex-col sm:flex-row gap-4 mb-12 items-center justify-center">
               <Link href="/contact">
-                <Button className="p-6 text-lg">
+                <Button size={"lg"} className="text-lg">
                   Get Started Today
                   <ArrowRight className="mt-1 size-5" />
                 </Button>
