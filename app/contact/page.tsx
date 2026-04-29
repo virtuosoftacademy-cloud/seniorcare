@@ -61,71 +61,6 @@ export default function ContactPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <div className="bg-card rounded-xl p-8 border border-border">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                    <Phone className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground mb-2">Phone</h3>
-                    <a href="tel:+44 (0) XXX XXX XXXX" className="text-primary hover:underline">
-                      +44 (0) XXX XXX XXXX
-                    </a>
-                    <p className="text-sm text-muted-foreground mt-1">Call us to discuss your needs</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-card rounded-xl p-8 border border-border">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                    <Mail className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground mb-2">Email</h3>
-                    <a href="mailto:info@ardellliving.co.uk" className="text-primary hover:underline">
-                      info@ardellliving.co.uk
-                    </a>
-                    <p className="text-sm text-muted-foreground mt-1">We&apos;ll respond within 24 hours</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-card rounded-xl p-8 border border-border">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                    <MapPin className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground mb-2">Address</h3>
-                    <p className="text-foreground">
-                      13 Edward Avenue<br />
-                      Morden<br />
-                      SM4 6EP
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-card rounded-xl p-8 border border-border">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                    <Clock className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground mb-2">Hours</h3>
-                    <p className="text-foreground text-sm">
-                      Monday - Friday: 9:00 AM - 5:00 PM<br />
-                      Saturday: 10:00 AM - 2:00 PM<br />
-                      Sunday: Closed
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* Contact Form */}
             <div className="lg:col-span-2">
               <div className="bg-card rounded-xl p-8 border border-border">
@@ -156,7 +91,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                          Organization Name
+                          Organization Name (Optional)
                         </label>
                         <input
                           type="text"
@@ -259,14 +194,83 @@ export default function ContactPage() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-lg font-semibold transition-colors"
+                      className="capitalize w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-lg font-semibold transition-colors"
                     >
-                      Send Message
+                     submit inquiry
                     </button>
                   </form>
                 )}
               </div>
             </div>
+
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div className="bg-card rounded-xl p-8 border border-border">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <Phone className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-foreground mb-2">Phone</h3>
+                    <a href="tel:+44 (0) 123 456 7890" className="text-primary hover:underline">
+                      +44 (0) 123 456 7890 
+                    </a>
+
+                    {/* <p className="text-sm text-muted-foreground mt-1">Call us to discuss your needs</p> */}
+                    {/* <p className="text-sm text-muted-foreground mt-1">Call us to discuss your needs</p> */}
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-card rounded-xl p-8 border border-border">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <Mail className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-foreground mb-2">Email</h3>
+                    <a href="mailto:info@ardellliving.co.uk" className="text-primary hover:underline">
+                      info@ardellliving.co.uk
+                    </a>
+                    <p className="text-sm text-muted-foreground mt-1">We&apos;ll respond within 24 hours</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-card rounded-xl p-8 border border-border">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <MapPin className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-foreground mb-2">Registered Address</h3>
+                    <p className="text-foreground">
+                      13 Edward Avenue<br />
+                      Morden<br />
+                      SM4 6EP
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-card rounded-xl p-8 border border-border">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                    <Clock className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-foreground mb-2">Business Hours</h3>
+                    <p className="text-foreground text-sm leading-relaxed">
+                      Monday - Friday:<br /> 9:00 AM - 5:00 PM <br />
+                      Saturday: <br /> 10:00 AM - 2:00 PM<br />
+                      Sunday: Closed
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
           </div>
           <div className='w-5xl pt-10 mx-auto'>
             <div className="space-y-4 bg-card border border-border rounded-xl p-10 md:p-12 shadow-sm text-center">

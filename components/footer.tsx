@@ -7,11 +7,11 @@ export default function Footer() {
   return (
     <footer className="bg-secondary-foreground text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 mb-12">
           {/* Company Info */}
           <div>
             <div className="flex items-center gap-2 -mt-4 md:-mt-10">
-              <div className="w-30 h-30 flex items-center justify-center">
+              <div className="w-60 h-30 flex items-center justify-center">
                 <img src="/ArdellLogo.png" alt="Ardell Living Logo" className="brightness-400 grayscale-50" />
               </div>
               {/* <span className="font-bold text-lg">Ardell Living</span> */}
@@ -47,7 +47,7 @@ export default function Footer() {
           </div> */}
 
           {/* Company */}
-          <div>
+          <div className='md:ml-30'>
             <h3 className="font-bold mb-4 text-background">Company</h3>
             <ul className="space-y-2 text-primary-foreground/70">
               <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>

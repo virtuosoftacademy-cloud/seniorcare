@@ -7,7 +7,7 @@ export default function Partners() {
     {
       id: 1,
       icon: Building2,
-      name: 'Local Authority Partners',
+      name: 'Local Authorities & Commissioners',
       description: 'We work closely with local authorities to deliver supported living solutions that meet commissioning requirements, regulatory standards and long-term placement objectives.',
     },
     {

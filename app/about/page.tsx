@@ -1,12 +1,15 @@
+'use client';
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Link from 'next/link'
 import Values from '@/components/values'
+import { ChevronDown, ChevronUp } from 'lucide-react'
+import { useState } from 'react'
 
-export const metadata = {
-  title: 'About Ardell Living | Our Mission & Values',
-  description: 'Learn about Ardell Living\'s housing-led supported living approach, our mission to support vulnerable adults, and our core values of dignity, independence, and compassionate care.',
-}
+// export const metadata = {
+//   title: 'About Ardell Living | Our Mission & Values',
+//   description: 'Learn about Ardell Living\'s housing-led supported living approach, our mission to support vulnerable adults, and our core values of dignity, independence, and compassionate care.',
+// }
 
 export default function AboutPage() {
   const cqcBoxes = [
@@ -84,35 +87,56 @@ export default function AboutPage() {
     'Providing transparent, accountable and well-documented service delivery',
     'Continuously reviewing and improving the quality of our services',
   ]
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="min-h-screen bg-background">
       {/* <Header /> */}
 
       {/* Hero Section - About Ardell Living */}
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-secondary/20 to-background">
+      <section className="pt-12 sm:pt-24 bg-gradient-to-b from-secondary/20 to-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground text-balance">
               About Ardell Living
             </h1>
-            <div className="space-y-4 text-left">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Creating homes where people can live with dignity, independence, and purpose, Ardell Living is a housing-led supported living provider, delivering high-quality accommodation alongside tailored, person-centred support. Our services are designed in line with the expectations of the Care Quality Commission (CQC), ensuring that individuals receive safe, effective, caring, responsive and well-led support.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We believe that a stable, well-managed home is the foundation for positive outcomes. By combining thoughtfully designed living environments with structured and consistent support, we enable individuals to develop independence, build confidence and live with dignity.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We work collaboratively with local authorities, care partners and healthcare professionals to ensure that every placement is appropriate, sustainable and aligned with individual care needs and outcomes.
-              </p>
+            <div className="space-y-4 text-sm">
+
+              {/* Clickable Dropdown - First Paragraph */}
+              <div className="overflow-hidden space-y-2">
+                <p
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="text-lg text-foreground font-medium leading-relaxed pr-8 transition-colors duration-200">
+                  Ardell Living is
+                  a housing-led supported living provider, delivering high-quality accommodation alongside
+                  tailored, person-centred support. Our services are designed in line with the expectations of the
+                  Care Quality Commission (CQC), ensuring that individuals receive safe, effective, caring,
+                  responsive and well-led support.
+                </p>
+
+
+                {/* Dropdown Content */}
+                <div className={` text-sm space-y-2
+        overflow-hidden transition-all duration-500 ease-in-out
+        ${isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-90'}
+        `}>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    We believe that a stable, well-managed home is the foundation for positive outcomes. By combining thoughtfully designed living environments with structured and consistent support, we enable individuals to develop independence, build confidence and live with dignity.
+                  </p>
+
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    We work collaboratively with local authorities, care partners and healthcare professionals to ensure that every placement is appropriate, sustainable and aligned with individual care needs and outcomes.
+                  </p>
+                </div>
+              </div>
+
+              {/* Remaining Normal Paragraphs */}
             </div>
           </div>
         </div>
       </section>
 
       {/* Our Mission Section */}
-      <section className="py-20 sm:py-28">
+      <section className="py-20 sm:py-18">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-6">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Our Mission</h2>

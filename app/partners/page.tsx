@@ -1,6 +1,8 @@
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import Link from 'next/link'
+import Partners from '@/components/partners'
+import LogoLoop from '@/components/LogoLoop'
 
 export const metadata = {
   title: 'Our Partners | Ardell Living',
@@ -13,7 +15,7 @@ export default function PartnersPage() {
       {/* <Header /> */}
 
       {/* Fold 1: Page Heading */}
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-secondary/20 to-background">
+      <section className="pt-16 bg-gradient-to-b from-secondary/20 to-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground text-balance">
@@ -29,7 +31,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Box Design for Partnership Model */}
-      <section className="py-12">
+      <section className="py-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-card border border-border rounded-xl p-8 md:p-10 shadow-sm">
             <p className="text-muted-foreground text-lg leading-relaxed text-center">
@@ -40,55 +42,7 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      {/* Our Strategic Partnerships */}
-      <section className="py-20 sm:py-28">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-10 text-center">
-            Our Strategic Partnerships
-          </h2>
-          <p className="text-lg text-muted-foreground mb-10 text-center">
-            We actively collaborate with:
-          </p>
-
-          <div className="space-y-6">
-            {/* Local Authorities & Commissioners */}
-            <div className="border-l-4 border-primary pl-6 py-2">
-              <h3 className="text-xl font-bold text-foreground mb-2">Local Authorities & Commissioners</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                We work closely with local authorities to deliver supported living solutions that meet commissioning
-                requirements, regulatory standards and long-term placement objectives.
-              </p>
-            </div>
-
-            {/* Care & Support Providers */}
-            <div className="border-l-4 border-primary pl-6 py-2">
-              <h3 className="text-xl font-bold text-foreground mb-2">Care & Support Providers</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                We partner with experienced, regulated care providers to deliver person-centred support aligned with
-                individual care plans and outcomes.
-              </p>
-            </div>
-
-            {/* Property & Housing Partners */}
-            <div className="border-l-4 border-primary pl-6 py-2">
-              <h3 className="text-xl font-bold text-foreground mb-2">Property & Housing Partners</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Through our housing network, we secure and manage high-quality accommodation designed to meet the
-                specific needs of supported living environments.
-              </p>
-            </div>
-
-            {/* Healthcare & Community Services */}
-            <div className="border-l-4 border-primary pl-6 py-2">
-              <h3 className="text-xl font-bold text-foreground mb-2">Healthcare & Community Services</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                We engage with healthcare professionals and community services to ensure individuals receive holistic
-                support that promotes wellbeing and independence.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Partners />
 
       {/* Our Commitment to Partnership */}
       <section className="py-20 sm:py-28 bg-muted/30">
@@ -121,10 +75,10 @@ export default function PartnersPage() {
       </section>
 
       {/* Logo Strip Section */}
-      <div className="py-24 sm:py-32">
+      {/* <div className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-center text-lg/8 font-semibold text-gray-900">
-           Our Strategic Partners Include:
+            Our Strategic Partners Include:
           </h2>
           <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
             <img
@@ -164,8 +118,14 @@ export default function PartnersPage() {
             />
           </div>
         </div>
-      </div>
-
+      </div> */}
+      <LogoLoop logos={[
+        { src: "https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg", alt: "Transistor" },
+        { src: "https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-gray-900.svg", alt: "Transistor" },
+        { src: "https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg", alt: "Transistor" },
+        { src: "https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg", alt: "Transistor" },
+        { src: "https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg", alt: "Transistor" },
+      ]} />
       {/* Interested in Partnership Opportunities? */}
       <section className="py-20 sm:py-28 bg-gradient-to-r from-primary/10 to-accent/10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
