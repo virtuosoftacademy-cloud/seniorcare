@@ -20,7 +20,9 @@ export default function CTA() {
             <div className="bg-accent-foreground/10 rounded-lg p-6 text-primary-foreground">
               <Phone className="w-8 h-8 mx-auto mb-3" />
               <p className="font-semibold mb-1">Phone</p>
-              <a href="tel:+441234567890" className="hover:underline">+44 (0) 123 456 7890 </a>
+              <span className="hover:underline">
+                +44 (0) XXX XXX XXXX <br /> (we will update when available)
+              </span>
             </div>
             <div className="bg-accent-foreground/10 rounded-lg p-6 text-primary-foreground">
               <Mail className="w-8 h-8 mx-auto mb-3" />
@@ -30,24 +32,29 @@ export default function CTA() {
             <div className="bg-accent-foreground/10 rounded-lg p-6 text-primary-foreground">
               <MapPin className="w-8 h-8 mx-auto mb-3" />
               <p className="font-semibold mb-1">Registered Address</p>
-              <p>13 Edward Avenue, Morden, SM4 6EP</p>
+              <p>Ardell Living Ltd
+                10 Garendon Gardens
+                Morden
+                SM4 6EP,
+                United Kingdom
+              </p>
             </div>
           </div>
 
           {/* CTA Button */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-            <Link 
-              href="/contact" 
+            <Link
+              href="/contact"
               className="inline-block bg-primary-foreground hover:bg-primary-foreground/90 text-primary px-8 py-3 rounded-lg font-semibold transition-colors"
             >
               Contact Us Now
             </Link>
-            <a 
+            {/* <a
               href="#home"
               className="inline-block border-2 border-primary-foreground hover:bg-primary-foreground/10 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-colors"
             >
               Back to Top
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

@@ -212,9 +212,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-foreground mb-2">Phone</h3>
-                    <a href="tel:+44 (0) 123 456 7890" className="text-primary hover:underline">
-                      +44 (0) 123 456 7890 
-                    </a>
+                    <span className="text-primary hover:underline">
+                      +44 (0) XXX XXX XXXX <br /> (we will update when available)
+                    </span>
 
                     {/* <p className="text-sm text-muted-foreground mt-1">Call us to discuss your needs</p> */}
                     {/* <p className="text-sm text-muted-foreground mt-1">Call us to discuss your needs</p> */}
@@ -245,9 +245,11 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-foreground mb-2">Registered Address</h3>
                     <p className="text-foreground">
-                      13 Edward Avenue<br />
+                      Ardell Living Ltd<br />
+                      10 Garendon Gardens<br />
                       Morden<br />
-                      SM4 6EP
+                      SM4 6EP<br/>
+                      United Kingdom
                     </p>
                   </div>
                 </div>

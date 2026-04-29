@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Values from '@/components/values'
 import { ChevronDown, ChevronUp } from 'lucide-react'
 import { useState } from 'react'
+import CTA from '@/components/cta';
 
 // export const metadata = {
 //   title: 'About Ardell Living | Our Mission & Values',
@@ -106,6 +107,8 @@ export default function AboutPage() {
                 <p
                   onClick={() => setIsOpen(!isOpen)}
                   className="text-lg text-foreground font-medium leading-relaxed pr-8 transition-colors duration-200">
+                  <em className='font-bold'>Creating homes where people can live with dignity, independence, and purpose. </em>
+                  <br />
                   Ardell Living is
                   a housing-led supported living provider, delivering high-quality accommodation alongside
                   tailored, person-centred support. Our services are designed in line with the expectations of the
@@ -243,20 +246,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section - Ready to Get in Touch */}
-      <section className="py-20 sm:py-28">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-            Ready to Get in Touch?
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Whether you're interested in our services, want to discuss a partnership, or have questions about our approach, we'd love to hear from you.
-          </p>
-          <Link href="/contact" className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-colors">
-            Contact Us Today
-          </Link>
-        </div>
-      </section>
+      <CTA />
 
       {/* <Footer /> */}
     </div>
