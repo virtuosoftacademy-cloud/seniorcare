@@ -27,11 +27,11 @@ const Hero = () => {
             {/* <img src="/herologo.png" alt="Ardell Living" className="bg-transparent"/> */}
             <div className="w-32 h-1 bg-secondary" />
             <p className="pt-4 w-sm text-center text-2xl text-primary mb-8 leading-relaxed font-mono italic">
-              Creating safe, high-quality homes where people can thrive. </p>
+             Creating homes where people can live with dignity, independence, and purpose. </p>
 
             <div className="font-sans flex flex-col sm:flex-row gap-4 mb-12 items-center justify-center">
               <Link href="/contact">
-                <Button size={"lg"} className="text-lg">
+                <Button size={"lg"} className="py-6 text-lg">
                   Get Started Today
                   <ArrowRight className="mt-1 size-5" />
                 </Button>
