@@ -196,7 +196,7 @@ export default function ContactPage() {
                       type="submit"
                       className="capitalize w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-lg font-semibold transition-colors"
                     >
-                     submit inquiry
+                      submit inquiry
                     </button>
                   </form>
                 )}
@@ -248,7 +248,7 @@ export default function ContactPage() {
                       Ardell Living Ltd<br />
                       10 Garendon Gardens<br />
                       Morden<br />
-                      SM4 6EP<br/>
+                      SM4 6EP<br />
                       United Kingdom
                     </p>
                   </div>
@@ -263,16 +263,15 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-foreground mb-2">Business Hours</h3>
                     <p className="text-foreground text-sm leading-relaxed">
-                      Monday - Friday:<br /> 9:00 AM - 5:00 PM <br />
-                      Saturday: <br /> 10:00 AM - 2:00 PM<br />
-                      Sunday: Closed
+                      Monday - Friday:<br /> 9:00 AM - 5:30 PM <br />
+                      Saturday - Sunday: Closed
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            
+
           </div>
           <div className='w-5xl pt-10 mx-auto'>
             <div className="space-y-4 bg-card border border-border rounded-xl p-10 md:p-12 shadow-sm text-center">
