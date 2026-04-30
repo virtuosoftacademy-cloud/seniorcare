@@ -1,100 +1,19 @@
 'use client';
-import Header from '@/components/header'
-import Footer from '@/components/footer'
-import Link from 'next/link'
 import Values from '@/components/values'
-import { ChevronDown, ChevronUp } from 'lucide-react'
 import { useState } from 'react'
 import CTA from '@/components/cta';
+import { cqcBoxes, ourCommitment, whatMakesUsDifferent } from '@/constant';
 
-// export const metadata = {
-//   title: 'About Ardell Living | Our Mission & Values',
-//   description: 'Learn about Ardell Living\'s housing-led supported living approach, our mission to support vulnerable adults, and our core values of dignity, independence, and compassionate care.',
-// }
+
 
 export default function AboutPage() {
-  const cqcBoxes = [
-    {
-      title: 'Safe',
-      description: 'We provide secure, well-maintained homes with clear safeguarding procedures and risk management frameworks in place',
-    },
-    {
-      title: 'Effective',
-      description: 'Support is delivered in line with assessed needs, care plans and best practice guidance',
-    },
-    {
-      title: 'Caring',
-      description: 'Individuals are treated with dignity, respect, and compassion at all times',
-    },
-    {
-      title: 'Responsive',
-      description: 'Services are flexible and adapt to changing needs and circumstances',
-    },
-    {
-      title: 'Well-led',
-      description: 'Strong governance, oversight and continuous improvement underpin our operations',
-    },
-  ]
-
-  const values = [
-    {
-      title: 'Dignity & Respect',
-      description: 'We treat every individual with respect, ensuring their choices, preferences and rights are always upheld.',
-    },
-    {
-      title: 'Independence',
-      description: 'We support individuals to develop confidence and life skills, enabling them to live as independently as possible.',
-    },
-    {
-      title: 'Safety & Stability',
-      description: 'We provide secure, well-managed environments where individuals feel safe and supported.',
-    },
-    {
-      title: 'Quality & Excellence',
-      description: 'We maintain high standards across our housing and support services, aligned with regulatory expectations.',
-    },
-    {
-      title: 'Accountability',
-      description: 'We operate with transparency, strong governance and clear responsibility in everything we do.',
-    },
-    {
-      title: 'Compassion',
-      description: 'We deliver care with empathy, understanding and a genuine commitment to each individual\'s wellbeing.',
-    },
-  ]
-
-  const whatMakesUsDifferent = [
-    {
-      title: 'Purpose-designed homes',
-      description: 'environments that promote safety, comfort and independence',
-    },
-    {
-      title: 'Structured and consistent support',
-      description: 'aligned with individual care plans and commissioning requirements',
-    },
-    {
-      title: 'Robust governance frameworks',
-      description: 'policies, procedures and oversight aligned with regulatory expectations',
-    },
-    {
-      title: 'Outcome-focused delivery',
-      description: 'supporting individuals to progress towards greater independence and stability',
-    },
-  ]
-
-  const ourCommitment = [
-    'Maintaining compliance with CQC standards and best practice guidance',
-    'Ensuring safeguarding and risk management processes are embedded in daily operations',
-    'Providing transparent, accountable and well-documented service delivery',
-    'Continuously reviewing and improving the quality of our services',
-  ]
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="min-h-screen bg-background">
       {/* <Header /> */}
 
       {/* Hero Section - About Ardell Living */}
-      <section className="pt-12 sm:pt-24 bg-gradient-to-b from-secondary/20 to-background">
+      <section className="pt-12 sm:pt-24 bg-linear-to-b from-secondary/20 to-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground text-balance">
@@ -235,7 +154,7 @@ export default function AboutPage() {
               <ul className="space-y-3 mt-4">
                 {ourCommitment.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-muted-foreground">{item}</span>
