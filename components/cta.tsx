@@ -32,10 +32,10 @@ export default function CTA() {
             <div className="bg-accent-foreground/10 rounded-lg p-6 text-primary-foreground">
               <MapPin className="w-8 h-8 mx-auto mb-3" />
               <p className="font-semibold mb-1">Registered Address</p>
-              <p>Ardell Living Ltd
-                10 Garendon Gardens
-                Morden
-                SM4 6EP,
+              <p>
+                13 Edward Avenue<br />
+                Morden<br />
+                SM4 6EP<br />
                 United Kingdom
               </p>
             </div>

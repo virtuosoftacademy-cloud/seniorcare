@@ -245,8 +245,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-foreground mb-2">Registered Address</h3>
                     <p className="text-foreground">
-                      Ardell Living Ltd<br />
-                      10 Garendon Gardens<br />
+                      13 Edward Avenue<br />
                       Morden<br />
                       SM4 6EP<br />
                       United Kingdom
