@@ -104,10 +104,11 @@ export default function AboutPage() {
 
               {/* Clickable Dropdown - First Paragraph */}
               <div className="overflow-hidden space-y-2">
-                <p
-                  onClick={() => setIsOpen(!isOpen)}
-                  className="text-lg text-foreground font-medium leading-relaxed pr-8 transition-colors duration-200">
-                  <em className='font-bold'>Creating homes where people can live with dignity, independence, and purpose. </em>
+                <p className='text-lg text-muted-foreground leading-relaxed'
+                // onClick={() => setIsOpen(!isOpen)}
+                // className="text-lg text-foreground font-medium leading-relaxed pr-8 transition-colors duration-200"
+                >
+                  <em className='font-bold text-muted-foreground'>Creating homes where people can live with dignity, independence, and purpose. </em>
                   <br />
                   Ardell Living is
                   a housing-led supported living provider, delivering high-quality accommodation alongside
@@ -118,10 +119,13 @@ export default function AboutPage() {
 
 
                 {/* Dropdown Content */}
-                <div className={` text-sm space-y-2
-        overflow-hidden transition-all duration-500 ease-in-out
-        ${isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-90'}
-        `}>
+                <div
+                  //         className={`text-sm space-y-2
+                  // overflow-hidden transition-all duration-500 ease-in-out
+                  // ${isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-90'}
+                  // `}
+                  className='space-y-2'
+                >
                   <p className="text-lg text-muted-foreground leading-relaxed">
                     We believe that a stable, well-managed home is the foundation for positive outcomes. By combining thoughtfully designed living environments with structured and consistent support, we enable individuals to develop independence, build confidence and live with dignity.
                   </p>
