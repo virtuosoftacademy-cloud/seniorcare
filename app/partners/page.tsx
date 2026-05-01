@@ -4,15 +4,12 @@ import Link from 'next/link'
 import Partners from '@/components/partners'
 import LogoLoop from '@/components/LogoLoop'
 
-
-
 export default function PartnersPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* <Header /> */}
 
       {/* Fold 1: Page Heading */}
-      <section className="pt-16 bg-gradient-to-b from-secondary/20 to-background">
+      <section className="pt-16 bg-linear-to-b from-secondary/20 to-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground text-balance">
@@ -72,50 +69,6 @@ export default function PartnersPage() {
       </section>
 
       {/* Logo Strip Section */}
-      {/* <div className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <h2 className="text-center text-lg/8 font-semibold text-gray-900">
-            Our Strategic Partners Include:
-          </h2>
-          <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-            <img
-              alt="Transistor"
-              src="https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg"
-              width={158}
-              height={48}
-              className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            />
-            <img
-              alt="Reform"
-              src="https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-gray-900.svg"
-              width={158}
-              height={48}
-              className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            />
-            <img
-              alt="Tuple"
-              src="https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-gray-900.svg"
-              width={158}
-              height={48}
-              className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-            />
-            <img
-              alt="SavvyCal"
-              src="https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-gray-900.svg"
-              width={158}
-              height={48}
-              className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-            />
-            <img
-              alt="Statamic"
-              src="https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg"
-              width={158}
-              height={48}
-              className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-            />
-          </div>
-        </div>
-      </div> */}
       <LogoLoop logos={[
         { src: "https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-gray-900.svg", alt: "Transistor" },
         { src: "https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-gray-900.svg", alt: "Transistor" },
@@ -124,7 +77,7 @@ export default function PartnersPage() {
         { src: "https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-gray-900.svg", alt: "Transistor" },
       ]} />
       {/* Interested in Partnership Opportunities? */}
-      <section className="py-20 sm:py-28 bg-gradient-to-r from-primary/10 to-accent/10">
+      <section className="py-20 sm:py-28 bg-linear-to-r from-primary/10 to-accent/10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
             Interested in Partnership Opportunities?
@@ -142,7 +95,6 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      {/* <Footer /> */}
     </div>
   )
 }
