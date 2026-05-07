@@ -2,50 +2,51 @@
 
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import { useState } from 'react'
+import { useActionState, useEffect, useState } from 'react'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { toast } from 'sonner'
+import Turnstile from '@/components/ui/turnstile'
+import { submitContactForm, type ContactFormState, initialContactState } from './actions'
+import Link from 'next/link'
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    organization: '',
-    email: '',
-    phone: '',
-    enquiryType: '',
-    message: '',
-    consent: false,
-  })
-  const [submitted, setSubmitted] = useState(false)
+  const [state, formAction, isPending] = useActionState<ContactFormState, FormData>(
+    submitContactForm,
+    initialContactState
+  )
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
+  // Forces the Turnstile widget to reset after a submission so the user
+  // gets a fresh token if they need to submit again.
+  const [captchaKey, setCaptchaKey] = useState(0)
+
+  // Defensive fallback: if the action ever returns a partial state
+  // (or state is briefly undefined), we never crash on `safeState.values.name`.
+  const safeState: ContactFormState = {
+    status: state?.status ?? 'idle',
+    message: state?.message ?? '',
+    value: { ...initialContactState.value, ...(state?.value ?? {}) },
+    fieldErrors: state?.fieldErrors,
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    // In a real app, this would send to a backend
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        organization: '',
-        email: '',
-        phone: '',
-        enquiryType: '',
-        message: '',
-        consent: false,
+  useEffect(() => {
+    if (!safeState.status || safeState.status === 'idle') return
+
+    if (safeState.status === 'success') {
+      toast.success('Message sent', {
+        description: safeState.message,
       })
-      setSubmitted(false)
-    }, 3000)
-  }
+    } else if (safeState.status === 'error') {
+      toast.error('Something went wrong', {
+        description: safeState.message,
+      })
+    }
+    // Reset the captcha after every submission so the next attempt has a fresh token.
+    setCaptchaKey((k) => k + 1)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [safeState.status, safeState.message])
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen">
       {/* <Header /> */}
 
       <section className="py-20 sm:py-28">
@@ -66,13 +67,13 @@ export default function ContactPage() {
               <div className="bg-card rounded-xl p-8 border border-border">
                 <h2 className="text-2xl font-bold text-foreground mb-6">Get In Touch</h2>
 
-                {submitted ? (
+                {safeState.status === 'success' ? (
                   <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
                     <p className="text-green-800 font-semibold">Thank you for reaching out!</p>
                     <p className="text-green-700 text-sm mt-2">We&apos;ve received your message and will get back to you soon.</p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form action={formAction} className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -82,26 +83,23 @@ export default function ContactPage() {
                           type="text"
                           id="name"
                           name="name"
-                          value={formData.name}
-                          onChange={handleChange}
+                          defaultValue={safeState.value.name}
                           required
                           className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                           placeholder="Your name"
                         />
                       </div>
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                          Organization Name (Optional)
+                        <label htmlFor="organisation" className="block text-sm font-medium text-foreground mb-2">
+                          Organisation Name (Optional)
                         </label>
                         <input
                           type="text"
-                          id="organization"
-                          name="organization"
-                          value={formData.organization}
-                          onChange={handleChange}
-                          required
+                          id="organisation"
+                          name="organisation"
+                          defaultValue={safeState.value.organisation}
                           className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                          placeholder="Your organization"
+                          placeholder="Your organisation"
                         />
                       </div>
 
@@ -116,8 +114,7 @@ export default function ContactPage() {
                           type="email"
                           id="email"
                           name="email"
-                          value={formData.email}
-                          onChange={handleChange}
+                          defaultValue={safeState.value.email}
                           required
                           className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                           placeholder="your@email.com"
@@ -131,8 +128,7 @@ export default function ContactPage() {
                           type="tel"
                           id="phone"
                           name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
+                          defaultValue={safeState.value.phone}
                           className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                           placeholder="+44 (0) XXX XXX XXXX"
                         />
@@ -140,14 +136,13 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label htmlFor="Type" className="block text-sm font-medium text-foreground mb-2">
+                      <label htmlFor="enquiryType" className="block text-sm font-medium text-foreground mb-2">
                         Enquiry Type
                       </label>
                       <select
-                        id="subject"
-                        name="subject"
-                        value={formData.enquiryType}
-                        onChange={handleChange}
+                        id="enquiryType"
+                        name="enquiryType"
+                        defaultValue={safeState.value.enquiryType}
                         required
                         className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                       >
@@ -167,9 +162,7 @@ export default function ContactPage() {
                       <textarea
                         id="message"
                         name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
+                        defaultValue={safeState.value.message}
                         rows={6}
                         className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="Tell us how we can help..."
@@ -180,23 +173,31 @@ export default function ContactPage() {
                         type="checkbox"
                         id="consent"
                         name="consent"
-                        checked={formData.consent}
-                        onChange={handleChange}
+                        defaultChecked={safeState.value.consent}
                         required
                         className="mr-2 leading-tight"
                       />
                       <label htmlFor="consent" className="text-sm text-foreground">
-                        I consent to Ardell Living storing and processing my information in accordance with its
+                        I consent to Ardell Living storing and processing my information in accordance with its {" "}
+                        <Link href={'/privacypolicy'} className='hover:underline'> 
                         Privacy Policy.
+                        </Link> {" "}
                         Your information will be handled securely and used only for the purpose of responding to your
                         enquiry.
                       </label>
                     </div>
+
+                    {/* Cloudflare Turnstile captcha */}
+                    {/* <div>
+                      <Turnstile resetKey={captchaKey} />
+                    </div> */}
+
                     <button
                       type="submit"
-                      className="capitalize w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-lg font-semibold transition-colors"
+                      disabled={isPending}
+                      className="capitalize w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 rounded-lg font-semibold transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      submit inquiry
+                      {isPending ? 'submitting...' : 'submit inquiry'}
                     </button>
                   </form>
                 )}
@@ -272,7 +273,7 @@ export default function ContactPage() {
 
 
           </div>
-          <div className='w-5xl pt-10 mx-auto'>
+          <div className='max-w-5xl pt-10 mx-auto'>
             <div className="space-y-4 bg-card border border-border rounded-xl p-10 md:p-12 shadow-sm text-center">
               <div>
                 <h2 className='font-bold text-xl pb-2'>For Local Authorities & Partners</h2>

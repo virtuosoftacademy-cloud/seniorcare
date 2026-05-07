@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-, "components/LogoLoop.jsx"  ],
+, "components/LogoLoop.jsx", "server.js"  ],
   "exclude": [
     "node_modules"
   ]

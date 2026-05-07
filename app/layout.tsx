@@ -37,8 +37,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background">
-      <body className="font-sans antialiased">
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className="font-sans antialiased bg-background">
         <Header/>
         {children}
         <Footer/>
