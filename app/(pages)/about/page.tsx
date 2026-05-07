@@ -4,8 +4,6 @@ import { useState } from 'react'
 import CTA from '@/components/cta';
 import { cqcBoxes, ourCommitment, whatMakesUsDifferent } from '@/constant';
 
-
-
 export default function AboutPage() {
   // const [isOpen, setIsOpen] = useState(false);
   return (
@@ -15,18 +13,15 @@ export default function AboutPage() {
       {/* Hero Section - About Ardell Living */}
       <section className="pt-12 sm:pt-24 bg-linear-to-b from-secondary/20 to-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-6">
+          <div className="text-left space-y-6">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground text-balance">
               About Ardell Living
             </h1>
-            <div className="space-y-4 text-sm">
-
-              {/* Clickable Dropdown - First Paragraph */}
-              <div className="overflow-hidden space-y-2">
-                <p className='text-lg text-muted-foreground leading-relaxed'
-                // onClick={() => setIsOpen(!isOpen)}
-                // className="text-lg text-foreground font-medium leading-relaxed pr-8 transition-colors duration-200"
-                >
+            
+            {/* Updated space-y-4 to space-y-6 to match Our Mission spacing */}
+            <div className="space-y-6">
+              <div className="overflow-hidden space-y-6">
+                <p className='text-lg text-muted-foreground leading-relaxed'>
                   <em className='font-bold text-muted-foreground'>Creating homes where people can live with dignity, independence, and purpose. </em>
                   <br />
                   Ardell Living is
@@ -36,15 +31,8 @@ export default function AboutPage() {
                   responsive and well-led support.
                 </p>
 
-
-                {/* Dropdown Content */}
-                <div
-                  //         className={`text-sm space-y-2
-                  // overflow-hidden transition-all duration-500 ease-in-out
-                  // ${isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-90'}
-                  // `}
-                  className='space-y-2'
-                >
+                {/* Updated inner container to space-y-6 for consistent paragraph gaps */}
+                <div className='space-y-6'>
                   <p className="text-lg text-muted-foreground leading-relaxed">
                     We believe that a stable, well-managed home is the foundation for positive outcomes. By combining thoughtfully designed living environments with structured and consistent support, we enable individuals to develop independence, build confidence and live with dignity.
                   </p>
@@ -54,8 +42,6 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-
-              {/* Remaining Normal Paragraphs */}
             </div>
           </div>
         </div>
@@ -99,26 +85,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Values Section */}
-      {/* <section className="py-20 sm:py-28">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Our Values</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our values shape every aspect of how we deliver our services, from the homes we provide to the support we deliver.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {values.map((value, idx) => (
-              <div key={idx} className="bg-card border border-border rounded-lg p-6 hover:border-primary/30 transition-colors">
-                <h3 className="text-xl font-bold text-foreground mb-3">{value.title}</h3>
-                <p className="text-muted-foreground">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
       <Values />
+
       {/* What Makes Us Different & Our Commitment Section */}
       <section className="py-20 sm:py-28 bg-muted/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

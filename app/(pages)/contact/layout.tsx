@@ -1,25 +1,18 @@
-// Add the <Toaster /> to your root layout (app/layout.tsx)
-// so toasts can be triggered from anywhere in the app.
-
 import type { Metadata } from 'next'
-import { Toaster } from '@/components/ui/sonner'
 
 export const metadata: Metadata = {
-  title: 'Ardell Living',
-  description: 'Supporting lives. Building futures.',
+  title: 'Contact Us | Ardell Living',
+  description: 'Get in touch with our team.',
 }
 
-export default function RootLayout({
+export default function ContactLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-        <Toaster />
-      </body>
-    </html>
+    <>
+      {children}
+    </>
   )
 }

@@ -12,7 +12,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 -mt-4 md:-mt-10">
               <div className="w-60 h-30 flex items-center justify-center">
-                <img src="/ArdellLogo.png" alt="Ardell Living Logo" className="brightness-400 grayscale-50" />
+                <img src="/ArdellLogo1.png" alt="Ardell Living Logo" className="brightness-400 grayscale-50" />
               </div>
               {/* <span className="font-bold text-lg">Ardell Living</span> */}
             </div>
