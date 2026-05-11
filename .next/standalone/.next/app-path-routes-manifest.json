@@ -1,0 +1,13 @@
+{
+  "/(pages)/about/page": "/about",
+  "/(pages)/contact/page": "/contact",
+  "/(pages)/home/page": "/home",
+  "/(pages)/page": "/",
+  "/(pages)/partners/page": "/partners",
+  "/(pages)/privacypolicy/page": "/privacypolicy",
+  "/(pages)/termsandconditions/page": "/termsandconditions",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/contact/route": "/api/contact",
+  "/favicon.ico/route": "/favicon.ico"
+}

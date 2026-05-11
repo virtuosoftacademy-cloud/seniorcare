@@ -1,0 +1,39 @@
+{
+  "app": {
+    "[project]/app/(pages)/about/page": [
+      "static/media/caa3a2e1cccd8315-s.p.16t1db8_9y2o~.woff2",
+      "static/media/fa2443bc2823ffce-s.p.0isnuxw27~4j..woff2"
+    ],
+    "[project]/app/(pages)/contact/page": [
+      "static/media/caa3a2e1cccd8315-s.p.16t1db8_9y2o~.woff2",
+      "static/media/fa2443bc2823ffce-s.p.0isnuxw27~4j..woff2"
+    ],
+    "[project]/app/(pages)/home/page": [
+      "static/media/caa3a2e1cccd8315-s.p.16t1db8_9y2o~.woff2",
+      "static/media/fa2443bc2823ffce-s.p.0isnuxw27~4j..woff2"
+    ],
+    "[project]/app/(pages)/page": [
+      "static/media/caa3a2e1cccd8315-s.p.16t1db8_9y2o~.woff2",
+      "static/media/fa2443bc2823ffce-s.p.0isnuxw27~4j..woff2"
+    ],
+    "[project]/app/(pages)/partners/page": [
+      "static/media/caa3a2e1cccd8315-s.p.16t1db8_9y2o~.woff2",
+      "static/media/fa2443bc2823ffce-s.p.0isnuxw27~4j..woff2"
+    ],
+    "[project]/app/(pages)/privacypolicy/page": [
+      "static/media/caa3a2e1cccd8315-s.p.16t1db8_9y2o~.woff2",
+      "static/media/fa2443bc2823ffce-s.p.0isnuxw27~4j..woff2"
+    ],
+    "[project]/app/(pages)/termsandconditions/page": [
+      "static/media/caa3a2e1cccd8315-s.p.16t1db8_9y2o~.woff2",
+      "static/media/fa2443bc2823ffce-s.p.0isnuxw27~4j..woff2"
+    ],
+    "[project]/app/_not-found/page": [
+      "static/media/caa3a2e1cccd8315-s.p.16t1db8_9y2o~.woff2",
+      "static/media/fa2443bc2823ffce-s.p.0isnuxw27~4j..woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

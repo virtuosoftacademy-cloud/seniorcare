@@ -1,0 +1,3 @@
+module.exports=[93434,a=>{"use strict";var b=a.i(7997);a.s(["default",0,function({children:a}){return(0,b.jsx)("div",{className:"flex flex-col min-h-screen",children:a})},"metadata",0,{title:"Our Partners | Ardell Living",description:"Discover the strategic partnerships and collaborations that support Ardell Living's mission to provide excellent housing-led supported living services."}])},23584,a=>{a.n(a.i(93434))}];
+
+//# sourceMappingURL=app_%28pages%29_partners_layout_tsx_13f~u_y._.js.map

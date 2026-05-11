@@ -1,0 +1,3 @@
+module.exports=[47794,a=>{"use strict";var b=a.i(7997);a.s(["default",0,function({children:a}){return(0,b.jsx)("div",{className:"flex flex-col min-h-screen",children:a})},"metadata",0,{title:"About Ardell Living | Our Mission & Values",description:"Learn about Ardell Living's housing-led supported living approach, our mission to support vulnerable adults, and our core values of dignity, independence, and compassionate care."}])},41944,a=>{a.n(a.i(47794))}];
+
+//# sourceMappingURL=app_%28pages%29_about_layout_tsx_0dxm5cu._.js.map
