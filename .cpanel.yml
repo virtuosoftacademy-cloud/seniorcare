@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/solion/public_html/ardellliving
+    - /bin/cp -R . $DEPLOYPATH
