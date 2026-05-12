@@ -1,54 +1,50 @@
 'use client'
 
-import Header from '@/components/header'
-import Footer from '@/components/footer'
-import { useActionState, useEffect, useState } from 'react'
+import { useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { toast } from 'sonner'
-import Turnstile from '@/components/ui/turnstile'
-import { submitContactForm, type ContactFormState, initialContactState } from './actions'
 import Link from 'next/link'
 
 export default function ContactPage() {
-  const [state, formAction, isPending] = useActionState<ContactFormState, FormData>(
-    submitContactForm,
-    initialContactState
-  )
+  const formRef = useRef<HTMLFormElement>(null);
+  const [isPending, setIsPending] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  // Forces the Turnstile widget to reset after a submission so the user
-  // gets a fresh token if they need to submit again.
-  const [captchaKey, setCaptchaKey] = useState(0)
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formRef.current) return;
 
-  // Defensive fallback: if the action ever returns a partial state
-  // (or state is briefly undefined), we never crash on `safeState.values.name`.
-  const safeState: ContactFormState = {
-    status: state?.status ?? 'idle',
-    message: state?.message ?? '',
-    value: { ...initialContactState.value, ...(state?.value ?? {}) },
-    fieldErrors: state?.fieldErrors,
-  }
+    setIsPending(true);
 
-  useEffect(() => {
-    if (!safeState.status || safeState.status === 'idle') return
+    try {
+      // Sending enquiry via EmailJS
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
 
-    if (safeState.status === 'success') {
+      setIsSuccess(true);
       toast.success('Message sent', {
-        description: safeState.message,
-      })
-    } else if (safeState.status === 'error') {
+        description: "We've received your enquiry and will get back to you soon.",
+      });
+      
+      formRef.current.reset();
+    } catch (error) {
+      console.error('EmailJS Error:', error);
       toast.error('Something went wrong', {
-        description: safeState.message,
-      })
+        description: 'Failed to send your message. Please try again later.',
+      });
+    } finally {
+      setIsPending(false);
     }
-    // Reset the captcha after every submission so the next attempt has a fresh token.
-    setCaptchaKey((k) => k + 1)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [safeState.status, safeState.message])
+  };
 
   return (
     <main className="min-h-screen">
-      {/* <Header /> */}
-
       <section className="py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 space-y-4">
@@ -62,18 +58,23 @@ export default function ContactPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            {/* Contact Form */}
             <div className="lg:col-span-2">
               <div className="bg-card rounded-xl p-8 border border-border">
                 <h2 className="text-2xl font-bold text-foreground mb-6">Get In Touch</h2>
 
-                {safeState.status === 'success' ? (
+                {isSuccess ? (
                   <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
                     <p className="text-green-800 font-semibold">Thank you for reaching out!</p>
                     <p className="text-green-700 text-sm mt-2">We&apos;ve received your message and will get back to you soon.</p>
+                    <button 
+                      onClick={() => setIsSuccess(false)}
+                      className="mt-4 text-sm text-green-800 underline font-medium"
+                    >
+                      Send another message
+                    </button>
                   </div>
                 ) : (
-                  <form action={formAction} className="space-y-6">
+                  <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -83,9 +84,8 @@ export default function ContactPage() {
                           type="text"
                           id="name"
                           name="name"
-                          defaultValue={safeState.value.name}
                           required
-                          className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                          className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                           placeholder="Your name"
                         />
                       </div>
@@ -97,12 +97,10 @@ export default function ContactPage() {
                           type="text"
                           id="organisation"
                           name="organisation"
-                          defaultValue={safeState.value.organisation}
-                          className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                          className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                           placeholder="Your organisation"
                         />
                       </div>
-
                     </div>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
@@ -114,9 +112,8 @@ export default function ContactPage() {
                           type="email"
                           id="email"
                           name="email"
-                          defaultValue={safeState.value.email}
                           required
-                          className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                          className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -128,8 +125,7 @@ export default function ContactPage() {
                           type="tel"
                           id="phone"
                           name="phone"
-                          defaultValue={safeState.value.phone}
-                          className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                          className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                           placeholder="+44 (0) XXX XXX XXXX"
                         />
                       </div>
@@ -142,7 +138,6 @@ export default function ContactPage() {
                       <select
                         id="enquiryType"
                         name="enquiryType"
-                        defaultValue={safeState.value.enquiryType}
                         required
                         className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                       >
@@ -162,35 +157,27 @@ export default function ContactPage() {
                       <textarea
                         id="message"
                         name="message"
-                        defaultValue={safeState.value.message}
                         rows={6}
-                        className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="w-full px-4 py-2 border border-border rounded-lg bg-muted/50 text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                         placeholder="Tell us how we can help..."
                       />
                     </div>
-                    <div>
+                    
+                    <div className="flex items-start">
                       <input
                         type="checkbox"
                         id="consent"
                         name="consent"
-                        defaultChecked={safeState.value.consent}
                         required
-                        className="mr-2 leading-tight"
+                        className="mt-1 mr-2"
                       />
                       <label htmlFor="consent" className="text-sm text-foreground">
                         I consent to Ardell Living storing and processing my information in accordance with its {" "}
-                        <Link href={'/privacypolicy'} className='hover:underline'> 
+                        <Link href={'/privacypolicy'} className='hover:underline font-medium'> 
                         Privacy Policy.
-                        </Link> {" "}
-                        Your information will be handled securely and used only for the purpose of responding to your
-                        enquiry.
+                        </Link>
                       </label>
                     </div>
-
-                    {/* Cloudflare Turnstile captcha */}
-                    {/* <div>
-                      <Turnstile resetKey={captchaKey} />
-                    </div> */}
 
                     <button
                       type="submit"
@@ -204,7 +191,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Contact Information */}
             <div className="space-y-8">
               <div className="bg-card rounded-xl p-8 border border-border">
                 <div className="flex items-start gap-4">
@@ -213,16 +199,10 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-foreground mb-2">Phone</h3>
-                    <span className="text-primary hover:underline">
-                      +44 (0) XXX XXX XXXX <br /> (we will update when available)
-                    </span>
-
-                    {/* <p className="text-sm text-muted-foreground mt-1">Call us to discuss your needs</p> */}
-                    {/* <p className="text-sm text-muted-foreground mt-1">Call us to discuss your needs</p> */}
+                    <span className="text-primary">+44 (0) XXX XXX XXXX</span>
                   </div>
                 </div>
               </div>
-
               <div className="bg-card rounded-xl p-8 border border-border">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
@@ -230,14 +210,12 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-foreground mb-2">Email</h3>
-                    <a href="mailto:info@ardellliving.co.uk" className="text-primary hover:underline">
+                    <a href="mailto:info@ardellliving.co.uk" className="text-primary hover:underline font-medium">
                       info@ardellliving.co.uk
                     </a>
-                    <p className="text-sm text-muted-foreground mt-1">We&apos;ll respond within 24 hours</p>
                   </div>
                 </div>
               </div>
-
               <div className="bg-card rounded-xl p-8 border border-border">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
@@ -245,58 +223,16 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-foreground mb-2">Registered Address</h3>
-                    <p className="text-foreground">
-                      13 Edward Avenue<br />
-                      Morden<br />
-                      SM4 6EP<br />
-                      United Kingdom
+                    <p className="text-foreground text-sm">
+                      13 Edward Avenue, Morden, SM4 6EP
                     </p>
                   </div>
                 </div>
-              </div>
-
-              <div className="bg-card rounded-xl p-8 border border-border">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
-                    <Clock className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-foreground mb-2">Business Hours</h3>
-                    <p className="text-foreground text-sm leading-relaxed">
-                      Monday - Friday:<br /> 9:00 AM - 5:30 PM <br />
-                      Saturday - Sunday: Closed
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-          <div className='max-w-5xl pt-10 mx-auto'>
-            <div className="space-y-4 bg-card border border-border rounded-xl p-10 md:p-12 shadow-sm text-center">
-              <div>
-                <h2 className='font-bold text-xl pb-2'>For Local Authorities & Partners</h2>
-                <p className="text-muted-foreground text-xs md:text-sm leading-relaxed text-center">
-                  We work closely with local authorities, commissioners and care providers to deliver supported
-                  living solutions aligned with individual needs and regulatory expectations.
-                  For partnership enquiries, please contact our team directly or submit an enquiry using the form
-                  above.
-                </p>
-              </div>
-              <div>
-                <h2 className='font-bold text-xl py-2 capitalize'>Supporting lives. Building futures.</h2>
-                <p className="text-muted-foreground text-xs md:text-sm leading-relaxed text-center">
-                  All enquiries are handled professionally and in confidence. We aim to respond within 1–2
-                  working days.
-                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* <Footer /> */}
     </main>
   )
 }
