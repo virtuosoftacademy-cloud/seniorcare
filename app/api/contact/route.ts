@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { sendContactEmails } from '@/lib/mailer'
+import { sendContactEmail } from '@/lib/email' // Verified: matches your new file name
 import { contactFormSchema } from '@/lib/validation/contact'
 import { verifyTurnstileToken } from '@/lib/captcha'
 
@@ -17,11 +17,12 @@ export async function POST(request: Request) {
       )
     }
 
-    // --- DEBUG LOG: SEE WHAT DATA IS ARRIVING ---
-    console.log("📨 Received form submission attempt:", body);
+    // --- DEBUG LOG: MONITORING THE SENDER ---
+    console.log("-----------------------------------------");
+    console.log("📨 API received submission from:", body.email);
 
-    // 1) Verify captcha BEFORE doing any work
-    // NOTE: Commented out for local testing so you can confirm SMTP works first.
+    // 1) Verify captcha 
+    // (Kept commented out for your local testing phase)
     /*
     const captchaToken = typeof body.captchaToken === 'string' ? body.captchaToken : ''
     const forwardedFor = request.headers.get('x-forwarded-for') || ''
@@ -29,45 +30,42 @@ export async function POST(request: Request) {
 
     const captchaResult = await verifyTurnstileToken(captchaToken, remoteIp)
     if (!captchaResult.ok) {
-      console.error("❌ Captcha Verification Failed:", captchaResult.reason);
+      console.error("❌ Captcha Failed:", captchaResult.reason);
       return NextResponse.json(
-        {
-          ok: false,
-          message:
-            captchaResult.reason ||
-            'Captcha verification failed. Please try again.',
-        },
+        { ok: false, message: captchaResult.reason || 'Captcha verification failed.' },
         { status: 403 }
       )
     }
     */
 
-    // 2) Validate user-supplied fields
+    // 2) Validate fields with Zod
     const parsed = contactFormSchema.safeParse(body)
     if (!parsed.success) {
       console.error("❌ Validation Failed:", parsed.error.flatten().fieldErrors);
       return NextResponse.json(
         {
           ok: false,
-          message: 'Validation failed.',
+          message: 'Validation failed. Please check your entries.',
           errors: parsed.error.flatten().fieldErrors,
         },
         { status: 422 }
       )
     }
 
-    // 3) Send
-    console.log("🚀 Attempting to send emails via SMTP...");
-    await sendContactEmails(parsed.data)
+    // 3) Send via centralized email service (lib/email.ts)
+    console.log(`🚀 Routing enquiry to: ${process.env.CONTACT_INBOX}`);
     
-    console.log("✅ SUCCESS: Emails sent successfully!");
+    await sendContactEmail(parsed.data)
+    
+    console.log("✅ SUCCESS: Emails sent to Admin and User.");
+    console.log("-----------------------------------------");
 
     return NextResponse.json(
       { ok: true, message: 'Enquiry received. We will be in touch shortly.' },
       { status: 200 }
     )
   } catch (err: any) {
-    // This will print the EXACT error from Nodemailer in your terminal
+    // This catches SMTP errors, authentication issues, or network timeouts
     console.error('[POST /api/contact] CRITICAL ERROR:', err.message || err);
     
     return NextResponse.json(
