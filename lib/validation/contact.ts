@@ -23,10 +23,12 @@ export const contactFormSchema = z.object({
   enquiryType: z.enum(VALID_ENQUIRY_TYPES, {
     message: 'Please select an enquiry type.',
   }),
+  // UPDATED: Now optional and allows empty strings
   message: z
     .string()
-    .min(10, 'Please write a slightly longer message (at least 10 characters).')
-    .max(5000, 'Message is too long (max 5000 characters).'),
+    .max(5000, 'Message is too long (max 5000 characters).')
+    .optional()
+    .or(z.literal('')),
   consent: z.literal(true, {
     message: 'You must agree to the privacy policy to continue.',
   }),
